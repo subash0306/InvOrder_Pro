@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Orders Add Page</h1>
+
+<form action="" method='POST'>
+    {% csrf_token %}
+    {% for order in order_form %}
+        {{ order.label_tag }}
+        {{ order }}<br><br>
+    {% endfor %}
+    <input type="submit" value="Place Order">
+</form>
+
+{% endblock %}
